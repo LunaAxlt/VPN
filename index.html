@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>🔔 ТРЦ БЕЗОПАСНОСТЬ • Полная система оповещения</title>
+  <title>🔔 ТРЦ ГАЛАКТИКА • Центр управления безопасностью</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -15,7 +15,7 @@
     }
 
     body {
-      background: #0f1a26;
+      background: #0a1622;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -23,566 +23,309 @@
       padding: 16px;
     }
 
-    /* Основная карточка */
     .dashboard {
-      max-width: 1500px;
+      max-width: 1600px;
       width: 100%;
-      background: #f5f9ff;
+      background: #f0f5fc;
       border-radius: 36px;
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(100, 180, 255, 0.2);
     }
 
     /* Шапка */
     .header {
-      padding: 22px 30px;
-      background: linear-gradient(105deg, #091e2f 0%, #173e5f 100%);
+      padding: 20px 30px;
+      background: linear-gradient(105deg, #051e30 0%, #1a3f5c 100%);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
     }
 
-    .header h1 {
-      font-weight: 500;
-      font-size: 1.9rem;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .header h1 i { color: #ffc857; margin-right: 12px; }
+    .mall-badge { background: rgba(255,255,255,0.08); padding: 8px 24px; border-radius: 40px; backdrop-filter: blur(4px); }
 
-    .header h1 i {
-      color: #ffc857;
-    }
-
-    .mall-badge {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 8px 20px;
-      border-radius: 60px;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 215, 150, 0.3);
-    }
-
-    /* Поиск и фильтры */
+    /* Поиск */
     .search-section {
       padding: 18px 28px;
-      background: #e6edf6;
+      background: #d9e6f2;
       display: flex;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
-      align-items: center;
-      border-bottom: 1px solid #ccd9e6;
+      border-bottom: 1px solid #b8cee4;
     }
-
     .search-wrapper {
-      flex: 2;
-      min-width: 260px;
-      display: flex;
-      background: white;
-      border-radius: 60px;
-      padding: 4px 6px 4px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      align-items: center;
-      border: 1px solid #b8cade;
+      flex: 2; min-width: 260px; display: flex; background: white; border-radius: 60px; padding: 4px 6px 4px 20px;
+      align-items: center; border: 1px solid #9bb7d4;
     }
-
-    .search-wrapper i {
-      color: #6f8fae;
-    }
-
-    .search-wrapper input {
-      border: none;
-      padding: 14px 12px;
-      font-size: 1rem;
-      width: 100%;
-      background: transparent;
-      outline: none;
-    }
-
+    .search-wrapper input { border: none; padding: 14px; font-size: 1rem; width: 100%; outline: none; background: transparent; }
     .filter-badge {
-      background: #1e3b5a;
-      color: white;
-      padding: 10px 24px;
-      border-radius: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: 0.15s;
+      background: #1f4e79; color: white; padding: 10px 24px; border-radius: 40px; display: flex; align-items: center;
+      gap: 8px; cursor: pointer; font-weight: 500; transition: 0.2s;
     }
+    .filter-badge:hover { background: #2c6490; }
 
-    .filter-badge:hover {
-      background: #2c577b;
-    }
-
-    /* Основной контент */
-    .content {
-      padding: 24px 28px;
-    }
+    /* Контент */
+    .content { padding: 24px 28px; }
 
     /* Статус-карточки */
     .status-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
-      margin-bottom: 28px;
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 28px;
     }
-
     .stat-card {
-      background: white;
-      border-radius: 22px;
-      padding: 16px 14px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
-      border: 1px solid #dbe4ed;
+      background: white; border-radius: 24px; padding: 18px 16px; box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+      border: 1px solid #cddef0;
     }
-
-    .stat-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #1e3b5a;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    .stat-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0b1e2e;
-      margin-top: 6px;
-    }
+    .stat-title { display: flex; align-items: center; gap: 10px; color: #1a3b55; font-weight: 500; }
+    .stat-value { font-size: 2rem; font-weight: 700; color: #0b1e2e; margin-top: 8px; }
+    .stat-sub { font-size: 0.85rem; color: #4a6f8f; margin-top: 4px; }
 
     /* Панели */
-    .main-panels {
-      display: grid;
-      grid-template-columns: 1.6fr 1.2fr;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
+    .main-panels { display: grid; grid-template-columns: 1.5fr 1.2fr; gap: 24px; margin-bottom: 24px; }
 
-    /* Левая: камеры + датчики + сценарии */
-    .left-complex {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    /* Левая часть */
+    .left-complex { display: flex; flex-direction: column; gap: 20px; }
 
+    /* Камеры */
     .cameras-panel {
-      background: white;
-      border-radius: 28px;
-      padding: 20px;
-      border: 1px solid #d0deed;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      background: white; border-radius: 28px; padding: 22px; border: 1px solid #c7d9ec;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.04);
     }
-
     .cameras-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margi
-
-
-n-top: 12px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 8px;
     }
-
     .camera-feed {
-      background: #121e2a;
-      border-radius: 18px;
-      overflow: hidden;
-      aspect-ratio: 16/10;
-      position: relative;
-      border: 2px solid #2c4b6e;
+      background: #0d1c29; border-radius: 18px; overflow: hidden; aspect-ratio: 16/10;
+      position: relative; border: 2px solid #2e577a;
     }
-
-    .camera-feed video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .camera-feed video, .camera-feed .mock-cam {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
-
+    .mock-cam {
+      background: linear-gradient(145deg, #132433, #1e3a52);
+      display: flex; align-items: center; justify-content: center; color: white;
+      font-size: 1.2rem; font-weight: bold; text-shadow: 0 2px 4px black;
+    }
     .cam-label {
-      position: absolute;
-      bottom: 8px;
-      left: 10px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      backdrop-filter: blur(3px);
-    }
+      position: absolute; bottom: 8px; left: 10px; background: rgba(0,0,0,0.7);
+      color: white; padding: 4px 12px; border-radius: 40px; f
 
+
+ont-size: 0.8rem;
+      backdrop-filter: blur(2px);
+    }
     .cam-status {
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      width: 12px;
-      height: 12px;
-      border-radius: 12px;
-      background: #2ecc71;
-      box-shadow: 0 0 10px #2ecc71;
+      position: absolute; top: 8px; right: 10px; width: 12px; height: 12px;
+      border-radius: 12px; background: #2ecc71; box-shadow: 0 0 12px #2ecc71;
     }
 
-    /* Датчики (поиск и карточки) */
+    /* Датчики */
     .sensors-panel {
-      background: white;
-      border-radius: 28px;
-      padding: 20px;
-      border: 1px solid #d0deed;
+      background: white; border-radius: 28px; padding: 22px; border: 1px solid #c7d9ec;
     }
-
     .sensor-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 20px;
-      margin-top: 16px;
+      display: flex; flex-wrap: wrap; gap: 12px 18px; margin-top: 18px; max-height: 280px; overflow-y: auto;
     }
-
     .sensor-item {
-      background: #ecf3fa;
-      padding: 10px 18px;
-      border-radius: 40px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 500;
-      border: 1px solid #bed6ec;
-      cursor: pointer;
-      transition: 0.1s;
+      background: #e6f0fa; padding: 12px 20px; border-radius: 40px; display: flex;
+      align-items: center; gap: 14px; font-weight: 500; border: 1px solid #b8d0e8;
+      cursor: pointer; transition: 0.1s;
     }
-
-    .sensor-item i {
-      color: #1e4f76;
-    }
-
+    .sensor-item i { color: #1f4e79; font-size: 1.2rem; }
+    .sensor-info { display: flex; flex-direction: column; }
+    .sensor-name { font-weight: 600; color: #0b2a41; }
+    .sensor-location { font-size: 0.8rem; color: #3c6482; }
     .sensor-value {
-      background: #1f4e79;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 0.9rem;
+      background: #1f4e79; color: white; padding: 6px 16px; border-radius: 40px;
+      font-size: 0.95rem; margin-left: 8px; font-weight: 600;
     }
 
-    /* Сценарии оповещения */
+    /* Сценарии */
     .scenario-panel {
-      background: white;
-      border-radius: 28px;
-      padding: 20px;
-      border: 1px solid #d0deed;
+      background: white; border-radius: 28px; padding: 22px; border: 1px solid #c7d9ec;
     }
-
     .scenario-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin: 18px 0;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 16px;
     }
-
     .scenario-btn {
-      background: #f0f6fe;
-      border: 1.5px solid #b8cee4;
-      border-radius: 20px;
-      padding: 14px 6px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.15s;
-      font-weight: 500;
+      background: #ecf3fc; border: 1.5px solid #b0cae3; border-radius: 20px;
+      padding: 16px 6px; text-align: center; cursor: pointer; transition: 0.15s; font-weight: 600;
     }
-
-    .scenario-btn i {
-      font-size: 24px;
-      display: block;
-      margin-bottom: 8px;
-      color: #1e4f76;
-    }
-
-    .scenario-btn.active {
-      background: #1f4e79;
-      border-color: #0b2d47;
-      color: white;
-    }
-
-    .scenario-btn.active i {
-      color: #ffd966;
-    }
-
-    .broadcast-actions {
-      display: flex;
-      gap: 16px;
-      margin-top: 6px;
-    }
-
+    .scenario-btn i { font-size: 26px; display: block; margin-bottom: 8px; color: #1e4f76; }
+    .scenario-btn.active { background: #1f4e79; border-color: #0b2d47; color: white; }
+    .scenario-btn.active i { color: #ffd966; }
+    .broadcast-actions { display: flex; gap: 16px; margin-top: 12px; }
     .btn {
-      padding: 14px 24px;
-      border-radius: 48px;
-      border: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      border: 1px solid transparent;
-      transition: 0.2s;
+      padding: 14px 24px; border-radius: 48px; border: none; font-weight: 600; display: inline-flex;
+      align-items: center; gap: 10px; cursor: pointer; background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid transparent; transition: 0.2s;
     }
+    .btn-primary { background: #1f4e79; color: white; flex: 1; }
+    .btn-danger { background: #c0392b; color: white; }
+    .btn-outline { border: 1.5px solid #b4c8da; background: white; }
 
-    .btn-primary {
-      background: #1f4e79;
-      color: white;
-      flex: 1;
-    }
-
-    .btn-danger {
-      background: #c0392b;
-      color: white;
-    }
-
-    .btn-outline {
-      border: 1.5px solid #b4c8da;
-    }
-
-    /* Правая панель: зоны + настройки */
+    /* Правая панель (зоны) */
     .zone-panel {
-      background: white;
-      border-radius: 28px;
-      padding: 24px;
-      border: 1px solid #d0deed;
+      background: white; border-radius: 28px; padding: 24px; border: 1px solid #c7d9ec;
     }
-
     .zone-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid #e2eaf2;
+      display: flex; align-items: center; justify-content: space-between; padding: 16px 0;
+      border-bottom: 1px solid #d9e6f2;
     }
-
-    .volume-slider {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    input[type="range"] {
-      width: 130px;
-    }
-
-    .vol-value {
-      min-width: 45px;
-      font-weight: 600;
-    }
-
-    .zone-status {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
+    .volume-slider { display: flex; align-items: center; gap: 16px; }
+    input[type="range"] { width: 140px; }
+    .vol-value { min-width: 48px; font-weight: 700; color: #1a3b55; }
     .zone-toggle {
-      width: 44px;
-      height: 24px;
-      background: #b0c6db;
-      border-radius: 40px;
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
+      width: 48px; height: 26px; background: #b0c6db; border-radius: 40px; position: relative;
+      cursor: pointer; transition: 0.2s; margin-left: 12px;
     }
-
-    .zone-toggle.active {
-      background: #1f4e79;
-    }
-
+    .zone-toggle.active { background: #1f4e79; }
     .zone-toggle::after {
-      content: '';
-
-
-width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 20px;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      transition: 0.2s;
+      content: ''; width: 22px; height: 22px; background: white; border-radius: 22px;
+      position: absolute; top: 2px; left: 2px; transition: 0.2s;
     }
-
-    .zone-toggle.active::after {
-      left: 22px;
-    }
+    .zone-toggle.active::after { left: 24px; }
 
     /* Лог */
     .log-section {
-      background: #f0f6fc;
-      border-radius: 26px;
-      padding: 20px;
-      margin-top: 20px;
+      background: #e3edf7; border-radius: 26px; padding: 20px; margin-top: 20px;
     }
-
-    .log-entries {
-      max-height: 150px;
-      overflow-y: auto;
-    }
-
+    .log-entries { max-height: 160px; overflow-y: auto; }
     .log-entry {
-      padding: 8px 0;
-      border-bottom: 1px dashed #b8cee4;
+      padding: 10px 0; border-bottom: 1px dashed #b0c8e0; display: flex; align-items: center;
     }
 
-    /* Анимации */
-    .pulse-alert {
-      animation: pulse-border 1s infinite;
-    }
-
+    .pulse-alert { animation: pulse-border 1s infinite; }
     @keyframes pulse-border {
       0% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(192, 57, 43, 0); }
+      70% { box-shadow: 0 0 0 15px rgba(192, 57, 43, 0); }
       100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0); }
-    }
-
-    max-width: 1100px {
-      .status-grid { grid-template-columns: repeat(3,1fr); }
-      .main-panels { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <div class="dashboard">
-  <!-- ШАПКА -->
   <div class="header">
-    <h1>
-      <i class="fas fa-shield-hal"></i>
-      ТРЦ «ГАЛАКТИКА» • ЦЕНТР БЕЗОПАСНОСТИ
-    </h1>
-    <div class="mall-badge">
-      <i class="fas fa-sync-alt fa-spin"></i> Система онлайн • 18.04.2026
-    </div>
+    <h1><i class="fas fa-shield-virus"></i> ТРЦ «ГАЛАК
+
+
+ТИКА» • СИСТЕМА ОПОВЕЩЕНИЯ</h1>
+    <div class="mall-badge"><i class="fas fa-sync-alt fa-spin"></i> ОНЛАЙН • ЦЕНТРАЛЬНЫЙ ПОСТ</div>
   </div>
 
-  <!-- ПОИСК И ФИЛЬТРЫ -->
+  <!-- ПОИСК -->
   <div class="search-section">
     <div class="search-wrapper">
-      <i class="fas fa-search"></i>
-      <input type="text" id="searchInput" placeholder="Поиск датчиков, камер, зон... (например 'дым', 'паркинг', 'камера 2')">
+      <i class="fas fa-search" style="color:#1f4e79;"></i>
+      <input type="text" id="searchInput" placeholder="🔍 Поиск датчиков, камер, зон... (например 'дым', 'паркинг', 'CO₂')">
     </div>
-    <div class="filter-badge" id="resetSearchBtn">
-      <i class="fas fa-filter"></i> Сбросить фильтры
-    </div>
-    <div class="filter-badge" id="showAllSensors">
-      <i class="fas fa-microchip"></i> Все датчики
-    </div>
+    <div class="filter-badge" id="resetSearchBtn"><i class="fas fa-times-circle"></i> Сброс</div>
+    <div class="filter-badge" id="showAllSensors"><i class="fas fa-microchip"></i> Все датчики</div>
   </div>
 
   <div class="content">
-    <!-- СТАТУС-КАРТОЧКИ (6 штук) -->
-    <div class="status-grid">
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-network-wired"></i> Система</div><div class="stat-value">Активна</div></div>
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-users"></i> Посетителей</div><div class="stat-value" id="visitorCount">1 284</div></div>
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-fire"></i> Пожар</div><div class="stat-value" id="fireStatus" style="color:#27ae60;">Норма</div></div>
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-temperature-high"></i> Температура</div><div class="stat-value" id="tempValue">22.5°C</div></div>
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-wind"></i> CO₂</div><div class="stat-value" id="co2Value">412 ppm</div></div>
-      <div class="stat-card"><div class="stat-title"><i class="fas fa-bolt"></i> Энергия</div><div class="stat-value">2.4 МВт</div></div>
-    </div>
+    <!-- СТАТУС-КАРТОЧКИ (настраиваемые) -->
+    <div class="status-grid" id="statusGridContainer"></div>
 
     <!-- ОСНОВНЫЕ ПАНЕЛИ -->
     <div class="main-panels">
-      <!-- ЛЕВАЯ ЧАСТЬ: КАМЕРЫ + ДАТЧИКИ + СЦЕНАРИИ -->
+      <!-- ЛЕВАЯ: КАМЕРЫ + ДАТЧИКИ + СЦЕНАРИИ -->
       <div class="left-complex">
-        <!-- КАМЕРЫ (рабочие через webcam) -->
+        <!-- КАМЕРЫ (отображаются всегда) -->
         <div class="cameras-panel">
-          <div style="display: flex; gap:12px; align-items:center;"><i class="fas fa-video" style="color:#1f4e79;"></i><h3>Видеонаблюдение · 6 камер</h3></div>
-          <div class="cameras-grid" id="camerasGrid">
-            <!-- камеры будут заполнены js ( getUserMedia ) -->
-          </div>
-          <div style="margin-top: 12px;"><button class="btn btn-outline" id="refreshCamerasBtn"><i class="fas fa-sync-alt"></i> Обновить камеры</button></div>
+          <h3 style="display: flex; gap:10px;"><i class="fas fa-video" style="color:#1f4e79;"></i> ВИДЕОНАБЛЮДЕНИЕ • 6 КАМЕР</h3>
+          <div class="cameras-grid" id="camerasGrid"></div>
+          <button class="btn btn-outline" id="refreshCamerasBtn" style="margin-top:12px;"><i class="fas fa-sync-alt"></i> Обновить камеры</button>
         </div>
 
-        <!-- ДАТЧИКИ (с поиском) -->
-        <div class="sensors-panel" id="sensorsPanel">
-          <div style="display: flex; justify-content: space-between;">
-            <h3><i class="fas fa-sensor"></i> Датчики и устройства</h3>
+        <!-- ДАТЧИКИ (с поиском и местоположением) -->
+        <div class="sensors-panel">
+          <div style="display:flex; justify-content:space-between;">
+            <h3><i class="fas fa-sensor"></i> ДАТЧИКИ И УСТРОЙСТВА</h3>
             <span id="sensorCount">12 датчиков</span>
           </div>
           <div class="sensor-list" id="sensorContainer"></div>
         </div>
 
-        <!-- СЦЕНАРИИ ОПОВЕЩЕНИЯ (со звуком) -->
-        <div class="sc
-
-
-enario-panel">
-          <h3><i class="fas fa-exclamation-triangle" style="color:#e67e22;"></i> Сценарии тревоги</h3>
-          <div class="scenario-grid" id="scenarioGrid">
-            <!-- динамически заполним -->
-          </div>
+        <!-- СЦЕНАРИИ ТРЕВОГИ -->
+        <div class="scenario-panel">
+          <h3><i class="fas fa-exclamation-triangle" style="color:#e67e22;"></i> СЦЕНАРИИ ОПОВЕЩЕНИЯ</h3>
+          <div class="scenario-grid" id="scenarioGrid"></div>
           <div class="broadcast-actions">
-            <button class="btn btn-primary" id="broadcastBtn"><i class="fas fa-broadcast-tower"></i> ЗАПУСТИТЬ ОПОВЕЩЕНИЕ</button>
+            <button class="btn btn-primary" id="broadcastBtn"><i class="fas fa-broadcast-tower"></i> ЗАПУСТИТЬ ТРЕВОГУ</button>
             <button class="btn btn-danger" id="stopBroadcastBtn"><i class="fas fa-stop-circle"></i> СТОП</button>
             <button class="btn btn-outline" id="testSoundBtn"><i class="fas fa-volume-up"></i> Тест звука</button>
           </div>
         </div>
       </div>
 
-      <!-- ПРАВАЯ: ЗОНЫ + НАСТРОЙКИ -->
+      <!-- ПРАВАЯ: ЗОНЫ ОПОВЕЩЕНИЯ + НАСТРОЙКИ -->
       <div class="zone-panel">
-        <h3 style="display: flex; gap:10px;"><i class="fas fa-map-signs"></i> Зоны оповещения</h3>
+        <h3 style="display:flex; gap:12px;"><i class="fas fa-map-signs"></i> ЗОНЫ ОПОВЕЩЕНИЯ</h3>
         <div id="zoneContainer"></div>
-        <div style="display: flex; gap:10px; margin-top:20px;">
+        <div style="display: flex; gap:12px; margin: 24px 0 12px;">
           <button class="btn btn-outline" id="selectAllZones"><i class="far fa-check-square"></i> Все зоны</button>
           <button class="btn btn-outline" id="muteAllZones"><i class="fas fa-volume-mute"></i> Mute</button>
           <button class="btn btn-outline" id="resetZonesBtn"><i class="fas fa-undo-alt"></i> Сброс</button>
         </div>
-        <div style="margin-top:20px; background:#eaf0f8; border-radius:20px; padding:16px;">
-          <i class="fas fa-sliders-h"></i> <strong>Статус системы:</strong> <span id="globalStatus">Готов к работе</span>
+        <div style="background:#e0ecf7; border-radius:24px; padding:18px; margin-top:10px;">
+          <i class="fas fa-info-circle"></i> <strong>Статус системы:</strong> <span id="globalStatus">Готов к работе</span>
+        </div>
+        <!-- настройка статусов -->
+        <div style="margin-top:18px;">
+          <label><i class="fas fa-sliders-h"></i> Настройка отображения статусов:</label>
+          <select id="statusPreset" style="margin-left:12px; padding:6px 12px; border-radius:30px;">
+            <option value="default">Стандартный</option>
+            <option value="compact">Компактный</option>
+            <option value="detailed">Детальный</option>
+          </select>
         </div>
       </div>
     </div>
 
     <!-- ЖУРНАЛ -->
     <div class="log-section">
-      <div style="display:flex; gap:10px;"><i class="fas fa-history"></i><h4>Журнал событий</h4><span style="margin-left:auto; cursor:pointer;" id="clearLogBtn"><i class="fas fa-trash-alt"></i></span></div>
+      <div style="display:flex;"><i class="fas fa-history"></i><h4>ЖУРНАЛ СОБЫТИЙ</h4><span style="margin-left:auto; cursor:pointer;" id="clearLogBtn"><i class="fas fa-trash-alt"></i></sp
+
+
+an></div>
       <div class="log-entries" id="logContainer"></div>
     </div>
   </div>
 </div>
 
 <script>
-  (function() {
-    "use strict";
-
-    // ---------- ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ----------
-    const logContainer = document.getElementById('logContainer');
-    let activeScenario = 'fire'; // по умолчанию пожар
-    let activeScenarioName = 'Пожарная тревога';
-    
-    // Звуковые объекты
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let alarmSoundBuffer = null;
-    let audioInitialized = false;
-
-    // Данные датчиков
-    const sensorData = [
-      { name: 'Дым (атриум)', icon: 'fa-smog', value: '0.2%', type: 'smoke', zone: 'атриум' },
-      { name: 'Дым (паркинг)', icon: 'fa-smog', value: '0.0%', type: 'smoke', zone: 'паркинг' },
-      { name: 'Температура СКЛАД', icon: 'fa-thermometer-half', value: '21°C', type: 'temp' },
-      { name: 'CO₂ фудкорт', icon: 'fa-wind', value: '390 ppm', type: 'co2' },
-      { name: 'Движение (этаж 1)', icon: 'fa-walking', value: 'Активно', type: 'motion' },
-      { name: 'Открытие дверей', icon: 'fa-door-open', value: 'Закрыто', type: 'door' },
-      { name: 'Вибрация', icon: 'fa-wave-square', value: '0.01g', type: 'vibration' },
-      { name: 'Утечка газа', icon: 'fa-fire', value: '0%', type: 'gas' },
-      { name: 'Влажность', icon: 'fa-tint', value: '48%', type: 'humidity' },
-      { name: 'Освещение', icon: 'fa-sun', value: '540 lux', type: 'light' },
-      { name: 'Звук (шум)', icon: 'fa-volume-up', value: '62 дБ', type: 'noise' },
-      { name: 'Пожарный извещатель', icon: 'fa-bell', value: 'Норма', type: 'fire_alarm' }
+  (() => {
+    // ---------- ДАННЫЕ ----------
+    // Статусы (можно настраивать)
+    let statusCards = [
+      { icon: 'fa-network-wired', title: 'Система', value: 'Активна', sub: 'все модули' },
+      { icon: 'fa-users', title: 'Посетителей', value: '1 284', sub: 'в ТРЦ' },
+      { icon: 'fa-fire', title: 'Пожар', value: 'Норма', sub: 'датчики ОК' },
+      { icon: 'fa-temperature-high', title: 'Температура', value: '22.5°C', sub: 'комфорт' },
+      { icon: 'fa-wind', title: 'CO₂', value: '412 ppm', sub: 'норма' },
+      { icon: 'fa-bolt', title: 'Энергия', value: '2.4 МВт', sub: 'потребление' }
     ];
 
-    // Зоны
+    // Датчики с местоположением
+    let sensors = [
+      { name: 'Дымовой извещатель', icon: 'fa-smog', value: '0.0%', location: 'Атриум, 1 этаж', type:'smoke' },
+      { name: 'Дымовой (паркинг)', icon: 'fa-smog', value: '0.1%', location: 'Паркинг P2', type:'smoke' },
+      { name: 'Температура', icon: 'fa-thermometer-half', value: '21°C', location: 'Склад B12', type:'temp' },
+      { name: 'CO₂', icon: 'fa-wind', value: '390 ppm', location: 'Фудкорт', type:'co2' },
+      { name: 'Движение', icon: 'fa-walking', value: 'Есть', location: 'Галерея 2', type:'motion' },
+      { name: 'Открытие двери', icon: 'fa-door-open', value: 'Закрыто', location: 'Вход №3', type:'door' },
+      { name: 'Вибрация', icon: 'fa-wave-square', value: '0.01g', location: 'Эскалатор', type:'vibro' },
+      { name: 'Газ', icon: 'fa-fire', value: '0%', location: 'Кухня фудкорт', type:'gas' },
+      { name: 'Влажность', icon: 'fa-tint', value: '48%', location: 'Кинотеатр', type:'hum' },
+      { name: 'Освещение', icon: 'fa-sun', value: '540 lx', location: 'Атриум', type:'light' },
+      { name: 'Шум', icon: 'fa-volume-up', value: '62 дБ', location: 'Детская зона', type:'noise' },
+      { name: 'Пожарный ИП', icon: 'fa-bell', value: 'Норма', location: 'Серверная', type:'fire' }
+    ];
+
     const zones = [
       { name: 'Торговая галерея', icon: 'fa-shopping-cart', volume: 75, active: true },
       { name: 'Фудкорт', icon: 'fa-utensils', volume: 65, active: true },
@@ -591,270 +334,215 @@ enario-panel">
       { name: 'Атриум / Холлы', icon: 'fa-elevator', volume: 70, active: true }
     ];
 
-    // ---------- ФУНКЦИИ ЛОГА ----------
-    function addLog(message, icon = 'fa-info-circle', isAlert = false) {
-      const time = new Date()
-
-
-.toLocaleTimeString('ru-RU', { hour:'2-digit', minute:'2-digit' });
-      const div = document.createElement('div');
-      div.className = 'log-entry';
-      div.innerHTML = `<span style="background:#d9e6f2; padding:3px 10px; border-radius:30px; margin-right:10px;">${time}</span>
-        <i class="fas ${icon}" style="margin-right:8px; color:${isAlert?'#c0392b':'#1f4e79'};"></i> ${message}`;
-      logContainer.prepend(div);
-      if(logContainer.children.length > 12) logContainer.removeChild(logContainer.lastChild);
-    }
-
-    // ---------- ЗВУК (Web Audio API) ----------
-    async function initAudio() {
-      if (audioInitialized) return;
-      await audioCtx.resume();
-      // Создаём звук тревоги (сирена)
-      const sampleRate = audioCtx.sampleRate;
-      const duration = 2.0;
-      const buffer = audioCtx.createBuffer(1, sampleRate * duration, sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < buffer.length; i++) {
-        const t = i / sampleRate;
-        const freq1 = 800 + 200 * Math.sin(t * 8);
-        const freq2 = 1000 + 300 * Math.sin(t * 5.3);
-        data[i] = 0.3 * (Math.sin(2 * Math.PI * freq1 * t) + 0.5 * Math.sin(2 * Math.PI * freq2 * t)) * Math.exp(-t*0.5);
-      }
-      alarmSoundBuffer = buffer;
-      audioInitialized = true;
-    }
-
-    function playAlarmSound() {
-      if (!alarmSoundBuffer) return;
-      const source = audioCtx.createBufferSource();
-      source.buffer = alarmSoundBuffer;
-      source.loop = true;
-      source.connect(audioCtx.destination);
-      source.start();
-      window.currentAlarmSource = source;
-      addLog('🔊 ЗВУКОВОЕ ОПОВЕЩЕНИЕ АКТИВИРОВАНО', 'fa-volume-up', true);
-    }
-
-    function stopAlarmSound() {
-      if (window.currentAlarmSource) {
-        try { window.currentAlarmSource.stop(); } catch(e){}
-        window.currentAlarmSource = null;
-      }
-      addLog('🔇 Звук оповещения остановлен', 'fa-stop');
-    }
-
-    // Тестовый звук
-    function playTestSound() {
-      if (!audioInitialized) initAudio().then(()=>{
-        const source = audioCtx.createBufferSource();
-        source.buffer = alarmSoundBuffer;
-        source.loop = false;
-        source.connect(audioCtx.destination);
-        source.start();
-      });
-      addLog('🔔 Тестовый звуковой сигнал', 'fa-bell');
-    }
-
-    // ---------- ИНИЦИАЛИЗАЦИЯ КАМЕР (WebRTC) ----------
-    async function setupCameras() {
-      const grid = document.getElementById('camerasGrid');
-      grid.innerHTML = '';
-      const constraints = { video: { width: 320, height: 200 } };
-      for (let i = 1; i <= 6; i++) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'camera-feed';
-        wrapper.innerHTML = `<video autoplay playsinline muted></video>
-          <span class="cam-label">Камера ${i} · ${['Вход','Паркинг','Галерея','Фудкорт','Кино','Склад'][i-1]}</span>
-          <span class="cam-status" style="background:#2ecc71;"></span>`;
-        const video = wrapper.querySelector('video');
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia(constraints);
-          video.srcObject = stream;
-          video.play();
-        } catch (e) {
-          video.poster = 'https://placehold.co/320x200/1a2a3a/white?text=Камера+недоступна';
-          wrapper.querySelector('.cam-status').style.background = '#e67e22';
-        }
-        grid.appendChild(wrapper);
-      }
-      addLog('📹 Камеры видеонаблюдения активированы', 'fa-video');
-    }
-
-    // ---------- ОТРИСОВКА ДАТЧИКОВ ----------
-    function renderSensors(filterText = '') {
-      const container = document.getElementById('sensorContainer');
-      const f = filterText.toLowerCase();
-      const filtered = sensorData.filter(s => s.name.toLowerCase().includes(f) || s.type.includes(f) || s.zone?.includes(f));
-      container.innerHTML = '';
-      filtered.forEach(s => {
-        const el = document.createElement('div');
-        el.className = 'sensor-item';
-        el.setAttribute('data-sensor', s.name)
-
-
-;
-        el.innerHTML = `<i class="fas ${s.icon}"></i> ${s.name} <span class="sensor-value">${s.value}</span>`;
-        el.addEventListener('click', ()=> {
-          addLog(`📟 Датчик: ${s.name} → ${s.value}`, 'fa-microchip');
-        });
-        container.appendChild(el);
-      });
-      document.getElementById('sensorCount').innerText = `${filtered.length} датчиков`;
-    }
-
-    // ---------- СЦЕНАРИИ ----------
     const scenarios = [
       { id: 'fire', name: 'Пожар', icon: 'fa-fire-extinguisher' },
       { id: 'evac', name: 'Эвакуация', icon: 'fa-people-arrows' },
       { id: 'lost', name: 'Ребёнок', icon: 'fa-child' },
-      { id: 'tech', name: 'Тех. сбой', icon: 'fa-tools' },
+      { id: 'tech', name: 'Сбой', icon: 'fa-tools' },
       { id: 'weather', name: 'Шторм', icon: 'fa-cloud-rain' },
       { id: 'security', name: 'Охрана', icon: 'fa-shield' },
       { id: 'test', name: 'Тест', icon: 'fa-vial' },
       { id: 'custom', name: 'Свой', icon: 'fa-sliders-h' }
     ];
 
+    let activeScenario = 'fire';
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let alarmBuffer = null;
+    let currentSource = null;
+
+    // ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----------
+    const log = (msg, icon='fa-info-circle', alert=false) => {
+      const c = document.getElementById('logContainer');
+      const d = document.createElement('div'); d.className='log-entry';
+      d.innerHTML = `<span style="background:#d0e2f1; padding:4px 12px; border-radius:40px; margin-right:14px;">${new Date().toLocaleTimeString().slice(0,5)}</span>
+        <i class="fas ${icon}" style="margin-right:10px; color:${alert?'#c0392b':'#1f4e79'};"></i>${msg}`;
+      c.prepend(d); if(c.children.length>12) c.lastChild.remove();
+    };
+
+    async function initAudio() {
+      if(alarmBuffer) return;
+      const sr = audioCtx.sampleRate;
+      const buf = audioCtx.createBuffer(1, sr*2, sr);
+      const data = buf.getChannelData(0);
+      for (let i=0; i<buf.length; i++) {
+        const t = i/sr;
+        data[i] = 0.3 * (Math.sin(2*Math.PI*900*t) + 0.3
+
+
+*Math.sin(2*Math.PI*1300*t)) * Math.exp(-t*0.8);
+      }
+      alarmBuffer = buf;
+    }
+    function playAlarm(loop=true) {
+      if(!alarmBuffer) return;
+      if(currentSource) try{currentSource.stop();}catch(e){}
+      const src = audioCtx.createBufferSource(); src.buffer = alarmBuffer;
+      src.loop = loop; src.connect(audioCtx.destination); src.start();
+      currentSource = src;
+    }
+    function stopAlarm() { if(currentSource) { try{currentSource.stop();}catch(e){} currentSource=null; } }
+
+    // Рендер статусов
+    function renderStatusCards() {
+      const grid = document.getElementById('statusGridContainer');
+      grid.innerHTML = statusCards.map(c => `
+        <div class="stat-card">
+          <div class="stat-title"><i class="fas ${c.icon}"></i> ${c.title}</div>
+          <div class="stat-value">${c.value}</div>
+          <div class="stat-sub">${c.sub}</div>
+        </div>`).join('');
+    }
+
+    // Камеры (отображаются всегда, даже без доступа)
+    function renderCameras() {
+      const grid = document.getElementById('camerasGrid');
+      const locations = ['Главный вход','Паркинг P1','Торговая галерея','Фудкорт','Кинотеатр','Склад'];
+      grid.innerHTML = locations.map((loc, i) => `
+        <div class="camera-feed" id="cam${i}">
+          <div class="mock-cam"><i class="fas fa-video" style="margin-right:8px;"></i> Камера ${i+1}
+${loc}</div>
+          <span class="cam-label">${loc}</span>
+          <span class="cam-status" style="background:#2ecc71;"></span>
+        </div>`).join('');
+      // Попытка получить реальные камеры
+      navigator.mediaDevices.getUserMedia({video:true}).then(stream => {
+        const videos = grid.querySelectorAll('.camera-feed');
+        videos.forEach((v,idx) => {
+          if(idx===0 || idx===2) {
+            const video = document.createElement('video'); video.autoplay = true; video.muted = true;
+            video.srcObject = stream; video.style.width='100%'; video.style.height='100%'; video.style.objectFit='cover';
+            v.innerHTML = ''; v.appendChild(video);
+            v.innerHTML += `<span class="cam-label">${locations[idx]}</span><span class="cam-status" style="background:#2ecc71;"></span>`;
+          }
+        });
+        log('✅ Камеры активированы (частично реальные)', 'fa-video');
+      }).catch(()=> log('📹 Используются заглушки камер (разрешите камеру)', 'fa-video'));
+    }
+
+    // Датчики
+    function renderSensors(filter='') {
+      const cont = document.getElementById('sensorContainer');
+      const f = filter.toLowerCase();
+      const filtered = sensors.filter(s => s.name.toLowerCase().includes(f) || s.location.toLowerCase().includes(f) || s.type.includes(f));
+      cont.innerHTML = filtered.map(s => `
+        <div class="sensor-item" data-sensor='${JSON.stringify(s)}'>
+          <i class="fas ${s.icon}"></i>
+          <div class="sensor-info"><span class="sensor-name">${s.name}</span><span class="sensor-location"><i class="fas fa-map-pin"></i> ${s.location}</span></div>
+          <span class="sensor-value">${s.value}</span>
+        </div>`).join('');
+      document.getElementById('sensorCount').innerText = `${filtered.length} датчиков`;
+      document.querySelectorAll('.sensor-item').forEach(el => el.addEventListener('click', (e) => {
+        const s = JSON.parse(el.dataset.sensor);
+        log(`📟 ${s.name} (${s.location}) → ${s.value}`, 'fa-microchip');
+      }));
+    }
+
+    // Сценарии
     function renderScenarios() {
       const grid = document.getElementById('scenarioGrid');
-      grid.innerHTML = '';
-      scenarios.forEach(s => {
-        const btn = document.createElement('div');
-        btn.className = `scenario-btn ${s.id === activeScenario ? 'active' : ''}`;
-        btn.dataset.id = s.id;
-        btn.innerHTML = `<i class="fas ${s.icon}"></i>${s.name}`;
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeScenario = s.id;
-          activeScenarioName = s.name;
-          addLog(`📌 Выбран сценарий: ${s.name}`, 'fa-tag');
-        });
-        grid.appendChild(btn);
-      });
-    }
-
-    // Зоны
-    function renderZones() {
-      const container = document.getElementById('zoneContainer');
-      container.innerHTML = '';
-      zones.forEach((z, idx) => {
-        const div = document.createElement('div');
-        div.className = 'zone-item';
-        div.innerHTML = `
-          <span><i class="fas ${z.icon}"></i> ${z.name}</span>
-          <div class="zone-status">
-            <div class="volume-slider">
-              <input type="range" min="0" max="100" value="${z.volume}" class="zone-vol" data-index="${idx}">
-              <span class="vol-value" id="zoneVolVal${idx}">${z.volume}%</span>
-            </div>
-            <div class="zone-toggle ${z.active ? 'active' : ''}" data-index="${idx}"></div>
-          </div>`;
-        container.appendChild(div);
-      });
-      // события
-      document.querySelectorAll('.zone-vol').forEach(slider => {
-        slider.addEventListener('input', e => {
-          const idx = e.target.dataset.index;
-          const val = e.target.value;
-          zones[idx].volume = val;
-          document.getElementById(`zoneVolVal${idx}`).innerText = val+'%';
-        });
-        slider.addEventListener('change', (e) => {
-          addLog(`🎚️ Громкость зоны изменена`, 'fa-sliders-h');
-        });
-      });
-      document.querySelectorAll('.zone-toggle').forEach(t => {
-        t.addEventListener('click', e => {
-          const idx = t.dataset.index;
-          zones[idx].active = !zones[idx].active;
-          t.classList.toggle('active');
-          addLog(`🔛 Зона "${zones[idx].name}" ${zones[idx].active?'включена':'отключена'}`);
-        });
-      });
-    }
-
-    // Запуск оповещения
-    function triggerBroadcast() {
-      const scenario = scenarios.find(s=>s.id===activeScenario) || {name:activeScenarioName};
-      addLog(`🚨 ЗАПУЩЕНО ОПОВЕЩЕНИЕ: ${scenario.name}`, 'fa-exclamation-triangle', true);
-      document.querySelector('.scenario-panel').classList.add('pulse-alert');
-      setTimeout(()=>document.querySelector('.scenario-panel').classList.remove('pulse-alert'),2000);
-      // звук
-      if (!audioInitialized) initAudio().then(()=>playAlarmSound());
-      else playAlarmSound();
-      // обновить статус
-      document.getElementById('globalStatus').innerText = `Активна тревога: ${scenario.name}`;
-      if(activeScenario==='
+      grid.innerHTML = scenarios.map(s => `
+        <div class="scenario-btn ${s.id===activeScenario?'active':''}" data-id="${s.id}">
+          <i class="fas ${s.icon}"></i>${s.name}
+        </div>`).join('');
+      grid.querySelectorAll('.scenario-btn').forEach(b => b.addEventListener('click', () => {
+        grid.querySelectorAll('.scenario-btn').forEach(bb=>bb.classList.remove('active'));
+        b.classList.add('active'); activeScenario = b.dataset.id;
+        log(`📌 Сценарий:
 porkbun.com | parked domain
 porkbun.com | parked domain
 dataset.id
 
 
-fire') document.getElementById('fireStatus').innerHTML = '<span style="color:#c0392b;">ТРЕВОГА</span>';
+${scenarios.find(x=>x.id===activeScenario).name}`, 'fa-tag');
+      }));
     }
 
-    function stopBroadcast() {
-      stopAlarmSound();
-      addLog('🛑 Оповещение остановлено оператором', 'fa-stop-circle');
-      document.getElementById('globalStatus').innerText = 'Готов к работе';
-      document.getElementById('fireStatus').innerHTML = '<span style="color:#27ae60;">Норма</span>';
-    }
-
-    // Поиск
-    function setupSearch() {
-      const searchInput = document.getElementById('searchInput');
-      searchInput.addEventListener('input', (e) => {
-        renderSensors(e.target.value);
-        // подсветка зон и камер? для простоты только датчики
-      });
-      document.getElementById('resetSearchBtn').addEventListener('click', ()=>{
-        searchInput.value = '';
-        renderSensors('');
-      });
-      document.getElementById('showAllSensors').addEventListener('click', ()=>{
-        renderSensors('');
-      });
+    // Зоны
+    function renderZones() {
+      const cont = document.getElementById('zoneContainer');
+      cont.innerHTML = zones.map((z,i) => `
+        <div class="zone-item">
+          <span><i class="fas ${z.icon}"></i> ${z.name}</span>
+          <div style="display:flex; align-items:center;">
+            <div class="volume-slider">
+              <input type="range" min="0" max="100" value="${z.volume}" data-idx="${i}" class="zoneVol">
+              <span class="vol-value" id="zoneVolVal${i}">${z.volume}%</span>
+            </div>
+            <div class="zone-toggle ${z.active?'active':''}" data-idx="${i}"></div>
+          </div>
+        </div>`).join('');
+      document.querySelectorAll('.zoneVol').forEach(s => s.addEventListener('input', e => {
+        const idx = e.target.dataset.idx; zones[idx].volume = e.target.value;
+        document.getElementById(`zoneVolVal${idx}`).innerText = e.target.value+'%';
+        log(`🎚️ Громкость зоны изменена`, 'fa-sliders-h');
+      }));
+      document.querySelectorAll('.zone-toggle').forEach(t => t.addEventListener('click', e => {
+        const idx = t.dataset.idx; zones[idx].active = !zones[idx].active;
+        t.classList.toggle('active');
+        log(`🔛 Зона "${zones[idx].name}" ${zones[idx].active?'включена':'отключена'}`);
+      }));
     }
 
     // Инициализация
-    async function init() {
+    function init() {
+      renderStatusCards();
+      renderCameras();
       renderSensors();
       renderScenarios();
       renderZones();
-      setupSearch();
-      
-      // камеры
-      try { await setupCameras(); } catch(e) { addLog('Камеры: разрешение не получено', 'fa-video'); }
-      
-      // аудио контекст при первом клике
-      document.body.addEventListener('click', async function unlockAudio() {
-        if (audioCtx.state === 'suspended') await audioCtx.resume();
-        if (!audioInitialized) await initAudio();
-      }, { once: false });
-      
-      // Кнопки
-      document.getElementById('broadcastBtn').addEventListener('click', triggerBroadcast);
-      document.getElementById('stopBroadcastBtn').addEventListener('click', stopBroadcast);
+
+      document.body.addEventListener('click', async ()=>{
+        if(audioCtx.state==='suspended') await audioCtx.resume();
+        await initAudio();
+      }, {once:false});
+
+      document.getElementById('broadcastBtn').addEventListener('click', ()=>{
+        const s = scenarios.find(x=>x.id===activeScenario);
+        log(`🚨 ЗАПУЩЕНА ТРЕВОГА: ${s.name}`, 'fa-exclamation-triangle', true);
+        document.querySelector('.scenario-panel').classList.add('pulse-alert');
+        setTimeout(()=>document.querySelector('.scenario-panel').classList.remove('pulse-alert'),2000);
+        playAlarm(true);
+        document.getElementById('globalStatus').innerText = `Тревога: ${s.name}`;
+        if(activeScenario==='fire') statusCards[2].value = 'ТРЕВОГА';
+        renderStatusCards();
+      });
+      document.getElementById('stopBroadcastBtn').addEventListener('click', ()=>{
+        stopAlarm(); log('🛑 Оповещение остановлено'); 
+        document.getElementById('globalStatus').innerText = 'Готов';
+        statusCards[2].value = 'Норма'; renderStatusCards();
+      });
       document.getElementById('testSoundBtn').addEventListener('click', ()=>{
-        if(!audioInitialized) initAudio().then(()=>playTestSound()); else playTestSound();
+        initAudio().then(()=>{ playAlarm(false); log('🔔 Тестовый сигнал'); });
       });
       document.getElementById('selectAllZones').addEventListener('click', ()=>{
-        zones.forEach((z,i)=>{ z.active = true; });
-        renderZones(); addLog('✅ Все зоны активированы');
+        zones.forEach(z=>z.active=true); renderZones(); log('✅ Все зоны включены');
       });
       document.getElementById('muteAllZones').addEventListener('click', ()=>{
-        zones.forEach(z=>z.volume=0); renderZones(); addLog('🔇 Все зоны заглушены');
+        zones.forEach(z=>z.volume=0); renderZones(); log('🔇 Mute');
       });
       document.getElementById('resetZonesBtn').addEventListener('click', ()=>{
-        zones.forEach((z,i)=>{ z.volume = [75,65,60,85,70][i]; z.active=true; });
-        renderZones(); addLog('🔄 Настройки зон сброшены');
+        zones[0].volume=75; zones[1].volume=65; zones[2].volume=60; zones[3].volume=85; zones[4].volume=70;
+        zones.forEach(z=>z.active=true); renderZones(); log('🔄 Зоны сброшены');
       });
+      document.getElementById('searchInput').addEventListener('input', e=> renderSensors(e.target.value));
+      document.getElementById('resetSearchBtn').addEventListener('click', ()=>{
+        document.getElementById('searchInput').value=''; renderSensors('');
+      });
+      document.getElementById('showAllSensors').addEventListener('click', ()=> renderSensors(''));
+      document.getElementById('refreshCamerasBtn').addEventListener('click', renderCameras);
       document.getElementById('clearLogBtn').addEventListener('click', ()=>{
-        logContainer.innerHTML = ''; addLog('Журнал очищен');
-      });
-      document.getElementById('refreshCamerasBtn').addEventListener('click', ()=> setupCameras());
+        document.getElementById('logContainer').innerHT
 
-      addLog('✅ Система управления ТРЦ загружена', 'fa-check-circle');
+
+ML = ''; log('🧹 Журнал очищен');
+      });
+      document.getElementById('statusPreset').addEventListener('change', e => {
+        if(e.target.value==='compact') statusCards = statusCards.map(c=>({...c, sub:''}));
+        else if(e.target.value==='detailed') statusCards = statusCards.map(c=>({...c, sub:c.sub+' • детально'}));
+        else location.reload(); 
+        renderStatusCards();
+      });
+      log('✅ Система управления загружена', 'fa-check-circle');
     }
 
     init();
